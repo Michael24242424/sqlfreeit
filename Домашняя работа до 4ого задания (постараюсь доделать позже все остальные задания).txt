@@ -1,0 +1,143 @@
+create database freeIT;
+
+use freeIT
+
+
+
+
+create table STUDENTS(
+studentid int not null identity primary key,
+studentname nvarchar(40) not null,
+studentsurname nvarchar(40) not null,
+studentsecondname nvarchar(40) not null,
+birthday nvarchar(40) not null,
+groupid nvarchar(40) not null,)
+
+
+create table TEACHERS(
+teacherid int not null identity primary key,
+teachername nvarchar(40) not null,
+teachersurname nvarchar(40) not null,
+teachersecondname nvarchar(40) not null,)
+
+
+create table GROUPS(
+groupsid int not null identity primary key,
+teachername nvarchar(40) not null,
+teachersurname nvarchar(40) not null,
+teachersecondname nvarchar(40) not null,)
+
+
+
+create table PLAN(
+groupid int not null identity primary key,
+teacherid int not null identity primary key,
+subjectid int not null identity primary key,
+groupid nvarchar(40) not null,
+teacherid nvarchar(40),
+subjectid nvarchar(40),)
+
+
+create table SUBJECTS(
+subjectid int not null identity primary key,
+subjectid nvarchar(40),
+subjectimequantity nvarchar(40),)
+
+
+create table connections
+(id_STUDENTS int not null,
+id_GROUPS int not null,
+primary key (id_STUDENTs groupid),
+foreign key (id_GROUPS groupid) references groups(id),)
+
+
+create table connections
+(id_PLAN int not null,
+id_TEACHERS int not null,
+primary key (id_PLAN teachersid),
+foreign key (id_TEACHERS teacherid) references
+(id_PLAN teachersid),)
+
+
+create table connections
+(id_PLAN int not null,
+id_SUBJECTS int not null,
+primary key (id_PLAN subjectid),
+foreign key (id_SUBJECTS subjedtid) references
+(id_PLAN subjectid),)
+
+
+create table connections
+(id_PLAN int not null,
+id_GROUPS int not null,
+primary key (id_PLAN groupid),
+foreign key (id_GROUPS groupid) references
+(id_PLAN groupid),)
+
+
+Insert into GROUPS values
+('Groupname', 'Groupcourse')
+Insert into 'Groupname', 'Groupcourse' values
+('ПО135', '1',), ('ПО134', '1',), ('ПО235', '2'),
+('ПО335', '3',),
+
+
+
+
+insert into STUDENTS values
+('П', 'Р', 'Федоренко', '1',),
+('О', 'Зингел', '1',),
+('П', 'Г', 'Михеенюк', '1',),
+('Н', 'Савицкая', '2',),
+('М', 'Е', 'Ковальчук', '2',),
+('Н', 'Г', 'Заболотная', '3',),
+('Т', 'Р', 'Ковриго', '3',),
+('Н', 'Шарапо', '3',),
+
+
+
+insert into TEACHERS values
+('Н', 'Сафроненко', '1',),
+('Н', 'У, 'Зайцева', '1',),
+('П', 'Г', 'Лисопад', '2',),
+('К', 'Н', 'Клюев', '2',),
+('П', 'Н', 'Рогачевский', '3',),
+('Н', 'Г', 'Макаров', '3',),
+
+
+insert into SUBJECTS values
+('Subjectname', 'Subjectquantitytime')
+
+
+insert into subjectname values
+('Physics', '200', '1',), 
+('Mathematics', '120', '1',),
+('Algorithmisation basics', '70', '2',),
+('Database creation', '130', '2',),
+('Visual programming tools', '90', '3',),
+('Object oriented programming', '70', '3',),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
